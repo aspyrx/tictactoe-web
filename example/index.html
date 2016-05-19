@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tic-Tac-Toe</title>
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="content-type" content="text/html; charset=UTF8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="tictactoe">
+            <div class="row y0">
+                <div class="elem x0">
+                    <h1 class="icon">&nbsp;</h1>
+                </div>
+                <div class="elem x1">
+                    <h1 class="icon">&nbsp;</h1>
+                </div>
+                <div class="elem x2">
+                    <h1 class="icon">&nbsp;</h1>
+                </div>
+            </div>
+            <div class="row y1">
+                <div class="elem x0">
+                     <h1 class="icon">&nbsp;</h1>
+                </div>
+                <div class="elem x1">
+                     <h1 class="icon">&nbsp;</h1>
+                </div>
+                <div class="elem x2">
+                     <h1 class="icon">&nbsp;</h1>
+                </div>
+            </div>
+            <div class="row y2">
+                <div class="elem x0">
+                     <h1 class="icon">&nbsp;</h1>
+                </div>
+                <div class="elem x1">
+                     <h1 class="icon">&nbsp;</h1>
+                </div>
+                <div class="elem x2">
+                     <h1 class="icon">&nbsp;</h1>
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <h1 class="game">Waiting for opponent...</h1>
+            <h1 class="turn">&nbsp;</h1>
+        </div>
+        <script src="./socket.io/socket.io.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
