@@ -89,6 +89,7 @@ export default class Board extends Component {
         } = this.props;
         const classes = classNames(className, styles.board, {
             waiting: gameStatus === "waiting",
+            disconnect: gameStatus === "disconnect",
             blue: gameStatus === 0,
             red: gameStatus === 1,
             turn: gameStatus === "start" && turn
