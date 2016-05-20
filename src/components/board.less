@@ -1,14 +1,33 @@
 :local(.board) {
     line {
-        stroke: darken(white, 10%);
+        stroke: darken(white, 50%);
         stroke-width: 1%;
     }
 
-    .tile {
-        cursor: pointer;
+    &.turn {
+        line {
+            stroke: darken(white, 10%);
+        }
+    }
 
-        rect {
-            fill: rgba(0, 0, 0, 0);
+    &.red {
+        line {
+            stroke: lighten(red, 25%);
+        }
+    }
+
+    &.blue {
+        line {
+            stroke: lighten(blue, 25%);
+        }
+    }
+
+    .tile {
+        fill: rgba(0, 0, 0, 0);
+
+        &:not(.ring):not(.cross).turn:hover {
+            cursor: pointer;
+            fill: rgba(100%, 100%, 100%, 5%);
         }
 
         circle {
@@ -26,12 +45,14 @@
         }
 
         &.ring {
+            cursor: initial;
             circle {
                 visibility: visible;
             }
         }
 
         &.cross {
+            cursor: initial;
             line {
                 visibility: visible;
             }

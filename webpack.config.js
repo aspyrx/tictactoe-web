@@ -16,7 +16,7 @@ module.exports = {
         filename: '[name].min.js'
     },
     resolve: {
-        root: path.resolve(__dirname),
+        root: path.resolve(__dirname, 'src'),
         extensions: ['', '.js', '.jsx'],
         modulesDirectories: ['node_modules']
     },
