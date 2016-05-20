@@ -1,36 +1,77 @@
 :local(.board) {
-    line {
-        stroke: darken(white, 50%);
-        stroke-width: 1%;
+    .lines {
+        line {
+            stroke: darken(white, 50%);
+            stroke-width: 1%;
+        }
+    }
+
+    .spinner {
+        path {
+            stroke: none;
+            fill: none;
+        }
     }
 
     &.waiting {
-        line {
-            stroke: darken(white, 70%);
+        .lines {
+            line {
+                stroke: darken(white, 70%);
+            }
+        }
+
+        .spinner {
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            transform-origin: 50% 50%;
+            animation: spin 1s infinite;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+
+            path {
+                stroke: darken(white, 50%);
+                stroke-width: 4%;
+            }
         }
     }
 
     &.disconnect {
-        line {
-            stroke: darken(white, 80%);
+        .lines {
+            line {
+                stroke: darken(white, 80%);
+            }
         }
     }
 
     &.turn {
-        line {
-            stroke: darken(white, 10%);
+        .lines {
+            line {
+                stroke: darken(white, 10%);
+            }
         }
     }
 
     &.red {
-        line {
-            stroke: lighten(red, 25%);
+        .lines {
+            line {
+                stroke: lighten(red, 25%);
+            }
         }
     }
 
     &.blue {
-        line {
-            stroke: lighten(blue, 25%);
+        .lines {
+            line {
+                stroke: lighten(blue, 25%);
+            }
         }
     }
 

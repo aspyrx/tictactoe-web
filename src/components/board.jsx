@@ -99,10 +99,15 @@ export default class Board extends Component {
                 <Row {...other} turn={turn} y={0} row={row0} />
                 <Row {...other} turn={turn} y={1} row={row1} />
                 <Row {...other} turn={turn} y={2} row={row2} />
-                <line x1="1" y1="0" x2="1" y2="3" />
-                <line x1="2" y1="0" x2="2" y2="3" />
-                <line x1="0" y1="1" x2="3" y2="1" />
-                <line x1="0" y1="2" x2="3" y2="2" />
+                <g className="lines">
+                    <line x1="1" y1="0" x2="1" y2="3" />
+                    <line x1="2" y1="0" x2="2" y2="3" />
+                    <line x1="0" y1="1" x2="3" y2="1" />
+                    <line x1="0" y1="2" x2="3" y2="2" />
+                </g>
+                <g className="spinner">
+                    <path d="M 1.15,1.5 a 0.35 0.35 0 1 1 0.35,0.35" />
+                </g>
             </svg>
         );
     }
