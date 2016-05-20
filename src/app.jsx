@@ -6,6 +6,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
+import 'normalize.css';
 import './app.less';
 import Index from './pages/index.jsx';
 
