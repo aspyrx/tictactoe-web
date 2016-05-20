@@ -1,11 +1,12 @@
 /* eslint-env node */
 
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-source-map',
-    debug: true,
     context: path.resolve(__dirname),
     entry: {
         app: 'src/index.js'
@@ -37,11 +38,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loaders: ['style', 'css']
+                loader: ExtractTextPlugin.extract('style', 'css')
             },
             {
                 test: /\.less$/,
-                loaders: ['style', 'css', 'less']
+                loader: ExtractTextPlugin.extract('style', 'css!less')
             },
             {
                 test: /\.jsx?$/,
@@ -71,8 +72,17 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        })
+        }),
+        new ExtractTextPlugin('style.css', {allChunks: true})
     ]
 };

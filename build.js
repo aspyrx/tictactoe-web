@@ -4,7 +4,13 @@
 const process = require('process');
 const webpack = require('webpack');
 
-const webpackConfig = require('./webpack.config');
+let webpackConfig;
+
+if (process.argv.length > 2 && process.argv[2] === 'production') {
+    webpackConfig = require('./webpack.config.production');
+} else {
+    webpackConfig = require('./webpack.config');
+}
 
 const webpackBuildFinished = (err, stats) => {
     if (err) {
