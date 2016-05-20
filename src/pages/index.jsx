@@ -31,7 +31,7 @@ export default class Index extends Component {
         const {board} = this.state;
         return (
             <div className={styles.index}>
-                <Board board={board} playMove={this.playMove} />
+                <Board className="board" board={board} playMove={this.playMove} />
             </div>
         );
     }

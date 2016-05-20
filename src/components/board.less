@@ -1,55 +1,39 @@
 :local(.board) {
-    flex: 1;
-    min-width: 300px;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
+    line {
+        stroke: darken(white, 10%);
+        stroke-width: 1%;
+    }
 
-    .row {
-        flex: 1;
+    .tile {
+        cursor: pointer;
 
-        display: flex;
-        flex-direction: row;
-
-        &:first-child {
-            border-bottom: 5px solid black;
+        rect {
+            fill: rgba(0, 0, 0, 0);
         }
 
-        &:last-child {
-            border-top: 5px solid black;
+        circle {
+            visibility: hidden;
+            fill: none;
+            stroke: lighten(blue, 25%);
+            stroke-width: 4%;
         }
 
-        .tile {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            cursor: pointer;
-            font-size: 50px;
+        line {
+            visibility: hidden;
+            fill: none;
+            stroke: lighten(red, 25%);
+            stroke-width: 4%;
+        }
 
-            &:first-child {
-                border-right: 5px solid black;
+        &.ring {
+            circle {
+                visibility: visible;
             }
+        }
 
-            &:last-child {
-                border-left: 5px solid black;
-            }
-
-            &::after {
-                content: "\a0";
-            }
-
-            &.circle {
-                &::after {
-                    content: "O";
-                }
-            }
-
-            &.cross {
-                &::after {
-                    content: "X";
-                }
+        &.cross {
+            line {
+                visibility: visible;
             }
         }
     }
