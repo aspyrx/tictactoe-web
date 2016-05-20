@@ -9,7 +9,7 @@ module.exports = {
     devtool: 'cheap-module-source-map',
     context: path.resolve(__dirname),
     entry: {
-        app: 'src/index.js'
+        app: './src/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,7 @@ module.exports = {
         filename: '[name].min.js'
     },
     resolve: {
-        root: path.resolve(__dirname),
+        root: path.resolve(__dirname, 'src'),
         extensions: ['', '.js', '.jsx'],
         modulesDirectories: ['node_modules']
     },
