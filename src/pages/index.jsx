@@ -70,7 +70,7 @@ export default class Index extends Component {
     render() {
         const game = this.state;
         return (
-            <div className={styles.index}>
+            <div className={styles.container}>
                 <Board className="board" playMove={this.playMove} {...game} />
             </div>
         );

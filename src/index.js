@@ -2,7 +2,9 @@
  * index.js - Entry point for the app.
  */
 
+import React from 'react';
+import {render} from 'react-dom';
 import App from './app.jsx';
 
-App();
+render(<App />, document.getElementById("app"));
 
