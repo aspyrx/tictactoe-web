@@ -4,7 +4,7 @@
 
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
-import './board.less';
+import styles from './board.less';
 
 class Tile extends Component {
     static get propTypes() {
@@ -80,7 +80,7 @@ export default class Board extends Component {
         const {board: [row0, row1, row2], ...other} = this.props;
 
         return (
-            <div className="board">
+            <div className={styles.board}>
                 <Row {...other} y={0} row={row0} />
                 <Row {...other} y={1} row={row1} />
                 <Row {...other} y={2} row={row2} />

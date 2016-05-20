@@ -4,7 +4,7 @@
 
 import React, {Component} from 'react';
 
-import './index.less';
+import styles from './index.less';
 import Board from '../components/board';
 
 export default class Index extends Component {
@@ -30,7 +30,7 @@ export default class Index extends Component {
     render() {
         const {board} = this.state;
         return (
-            <div className="index">
+            <div className={styles.index}>
                 <Board board={board} playMove={this.playMove} />
             </div>
         );
