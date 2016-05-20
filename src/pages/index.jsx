@@ -32,7 +32,10 @@ export default class Index extends Component {
         };
 
         socket.on('connect', () => this.setState({ gameStatus: "waiting" }));
-        socket.on('disconnect', () => this.setState({ gameStatus: "disconnect" }));
+        socket.on('disconnect', () => this.setState({
+            gameStatus: "disconnect",
+            turn: false
+        }));
         socket.on('game start', () => this.setState({
             gameStatus: "start", ...initialGame
         }));
@@ -45,7 +48,7 @@ export default class Index extends Component {
                 default:
                     gameStatus = winner;
             }
-            this.setState({ gameStatus: gameStatus });
+            this.setState({ gameStatus: gameStatus, turn: false });
         });
         socket.on('turn start', player => this.setState({
             player: player, turn: true
