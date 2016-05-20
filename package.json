@@ -9,7 +9,8 @@
   "scripts": {
     "watch": "node build.js watch",
     "build": "node build.js",
-    "prepublish": "node build.js production"
+    "dist": "node build.js production",
+    "prepublish": "dist"
   },
   "repository": {
     "type": "git",
