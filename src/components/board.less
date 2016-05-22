@@ -37,8 +37,15 @@
             animation-timing-function: linear;
 
             path {
-                stroke: darken(white, 50%);
                 stroke-width: 4%;
+
+                &.red {
+                    stroke: lighten(red, 25%);
+                }
+
+                &.blue {
+                    stroke: lighten(blue, 25%);
+                }
             }
         }
     }

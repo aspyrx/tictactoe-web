@@ -106,7 +106,8 @@ export default class Board extends Component {
                     <line x1="0" y1="2" x2="3" y2="2" />
                 </g>
                 <g className="spinner">
-                    <path d="M 1.15,1.5 a 0.35 0.35 0 1 1 0.35,0.35" />
+                    <path className="red" d="M 1.15,1.5 a 0.35 0.35 0 0 1 0.35,-0.35" />
+                    <path className="blue" d="M 1.85,1.5 a 0.35 0.35 0 0 1 -0.35,0.35" />
                 </g>
             </svg>
         );
