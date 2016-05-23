@@ -10,7 +10,7 @@
     "watch": "node build.js watch",
     "build": "node build.js",
     "dist": "node build.js production",
-    "prepublish": "dist"
+    "prepublish": "npm run dist"
   },
   "repository": {
     "type": "git",
