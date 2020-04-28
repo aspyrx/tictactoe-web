@@ -1,13 +1,12 @@
 :local(.container) {
-    height: 100vh;
+    flex: 1;
     display: flex;
-    flex-flow: row wrap;
-
     background-color: lighten(black, 10%);
 
     .board {
         flex: 1;
-        margin: 10px;
+        max-height: 100vh;
+        max-width: 100vw;
     }
 }
 
